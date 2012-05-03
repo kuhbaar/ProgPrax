@@ -68,12 +68,8 @@ public class Library {
 	 * @return Die abgerufene Playlist 
 	 */
 	public Playlist getPlaylist(String name) {
-		Playlist temp=null;
-		for(String s : this.lib.keySet()){
-			if(s.equals(name)) temp=this.lib.get(name);
-		}
-		return temp; 
-
+		if(lib.containsKey(name)) return new Playlist(this.lib.get(name));
+		else return null;
 	}
 
 	/**
@@ -88,5 +84,4 @@ public class Library {
 		
 
 	}
-
 }
